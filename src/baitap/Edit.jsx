@@ -7,20 +7,7 @@ import StudentService from "../../service/Service";
 import swal from "sweetalert";
 import { NavLink } from "react-router-dom";
 
-const editSchema = yup.object({
-    city: yup.string()
-        .required("Vui Lòng Nhập Thành Phố")
-        .max(100, "Tên Phải Ít Hơn 100 Kí Tự "),
-    price: yup.number()
-        .required("Vui Lòng Nhập Giá")
-        .positive()
-        .max(500000, "Tuổi Không Được Lớn Hơn 50")
-        .typeError("Vui Lòng Nhập Tuổi"),
-    description: yup.string()
-        .required("Vui Lòng Nhập Mô Tả")
-        .max(3000, "Thông Tin Phải Ít Hơn 30 Kí Tự "),
 
-})
 
 
 const EditTour = () => {
@@ -48,7 +35,6 @@ const EditTour = () => {
     });
     console.log(update);
 
-    //const này để lấy value ở chỗ địa điểm
     const handleOptionChange = (event) => {
         setSelectedOption(event.target.value);
     };

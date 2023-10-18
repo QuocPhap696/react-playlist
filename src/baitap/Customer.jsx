@@ -47,7 +47,6 @@ const Customer = () => {
             address: document.getElementById('address').value
         };
         setCustomerList([...customerList, newCustomer]);
-        // Đóng modal
         handleClose();
     };
 
@@ -58,18 +57,16 @@ const Customer = () => {
 
     const handleEdit = (customer) => {
         setEditedCustomer(customer);
-        setShow(true);  // Hiển thị modal
+        setShow(true);  
     };
 
     const handleUpdate = () => {
-        // Lấy thông tin đã chỉnh sửa từ các input
         const updatedCustomerInfo = {
             fullName: document.getElementById('fullName').value,
             email: document.getElementById('email').value,
-            // ... (similarly for other fields) ...
+           
         };
 
-        // Cập nhật thông tin khách hàng
         const updatedCustomerList = customerList.map((customer) => {
             if (customer.id === editedCustomer.id) {
                 return { ...customer, ...updatedCustomerInfo };
@@ -78,8 +75,8 @@ const Customer = () => {
         });
 
         setCustomerList(updatedCustomerList);
-        setEditedCustomer(null); // Đặt lại thông tin khách hàng đang chỉnh sửa
-        handleClose(); // Đóng modal
+        setEditedCustomer(null); 
+        handleClose(); 
     };
 
 
